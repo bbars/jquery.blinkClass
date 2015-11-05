@@ -1,5 +1,9 @@
 (function() {
     var $ = jQuery;
+    
+    function AssocArray() {}
+    AssocArray.prototype = null;
+    
     $.fn.blinkClass = function(className, delay) {
         if (!className && className !== false)
             return this;
@@ -12,8 +16,6 @@
         
         $(this).each(function() {
             if (typeof this.blinkClass != 'object') {
-                function AssocArray() {}
-                AssocArray.prototype = null;
                 this.blinkClass = new AssocArray();
             }
             
